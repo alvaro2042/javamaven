@@ -1,4 +1,4 @@
-job('Java_Maven_App_DSL') {
+job('Java Maven App DSL') {
     description('Java Maven App con DSL para el curso de Jenkins')
     scm {
         git('https://github.com/alvaro2042/javamaven.git', 'main') { node ->
@@ -12,12 +12,12 @@ job('Java_Maven_App_DSL') {
           goals('-B -DskipTests clean package')
         }
         maven {
-          mavenInstallation('mavenjenkins')
+          mavenInstallation('MavenJenkins')
           goals('test')
         }
         shell('''
           echo "Entrega: Desplegando la aplicación" 
-          java -jar "/var/jenkins_home/workspace/Java_Maven_App_DSL/target/my-app-1.0-SNAPSHOT.jar"
+          java -jar "/var/jenkins_home/workspace/Java Maven App DSL/target/my-app-1.0-SNAPSHOT.jar"
         ''')  
     }
     publishers {
