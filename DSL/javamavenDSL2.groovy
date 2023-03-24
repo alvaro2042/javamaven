@@ -12,7 +12,7 @@ job('Java Maven App DSL 2') {
           goals('-B -DskipTests clean package')
         }
         maven {
-          mavenInstallation('JavenJenkins')
+          mavenInstallation('MavenJenkins')
           goals('test')
         }
         shell('''
