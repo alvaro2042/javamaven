@@ -24,7 +24,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh 'pwd'
-                sh 'chmod +x ./jenkins/scripts/deliver.sh'
+                sh 'chmod +x /var/jenkins/workscapce/"Pipeline Maven"/jenkins/scripts/deliver.sh'
                 sh './jenkins/scripts/deliver.sh'
             }
         }
