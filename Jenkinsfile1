@@ -24,8 +24,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh 'pwd'
-                sh 'chown -R 777 /var/jenkins_home/workspace/"Pipeline Maven"'
-                sh 'chown -R 777 /var/jenkins_home/workspace/"Pipeline Maven@tmp"'
+                sh 'chmod +x ./jenkins/scripts/deliver.sh'
                 sh './jenkins/scripts/deliver.sh'
             }
         }
