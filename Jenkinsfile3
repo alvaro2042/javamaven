@@ -35,6 +35,7 @@ pipeline {
         }
         stage('Docker Build & Push') {
           steps {
+            sh 'chmod +x jenkins/scripts/deliver.sh'
             script {  
               docker.withRegistry('https://registry.hub.docker.com', 'docker-hub') {
                 def appmavenjenkins = docker.build("alvaro2042/mavenjenkins:${gitcommit}", ".")
